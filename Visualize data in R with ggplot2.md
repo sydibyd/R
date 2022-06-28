@@ -1,3 +1,6 @@
+# Visualize data in R with ggplot2 <br/>
+## ggplot2 <br/>
+
 The ggplot2 package lets us make high quality, customizable plots of the data. <br/>
 The ggplot2 is based on [the grammar of graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448), so we can build any plot from the same basic components, like building blocks. <br/>
 
