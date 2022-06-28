@@ -54,7 +54,8 @@ plotting the data: <br/>
         `panel.background = element_blank()` <br/> 
   `)` <br/> 
         
-        
-
-![Paris Metro Traffic](https://user-images.githubusercontent.com/35872299/176253580-c1b36fae-4a5e-44e6-8bba-ea54e4afcd91.png) <br/>
+<p align="center">
+  <img width="800" height="679" src="https://user-images.githubusercontent.com/35872299/176253580-c1b36fae-4a5e-44e6-8bba-ea54e4afcd91.png">
+</p>
+<br/> 
 Link: https://rpubs.com/sydibyd/919797
