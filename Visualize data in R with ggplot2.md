@@ -11,5 +11,5 @@ Building blocks include:
  - **A set of aesthetic attributes:** An aesthetic is a visual property of an object in our plot. We can think of an aesthetic as a connection, or mapping, between a visual feature in our plot and a variable in our data. For example, in a scatterplot, aesthetics include things like the size, shape, color, or location (x-axis, y-axis) of our data points. 
 
 
-## Preparing the data
+### Preparing the data
 W'll use R code to specify the dataset, geom, and aesthetics of the plot.
