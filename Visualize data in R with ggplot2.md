@@ -39,6 +39,11 @@ Sort the 5 most frequent stations:
 `arrange(desc(trafic)) %>%` <br/>  
 `slice(1:5)` <br/>
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/35872299/176256158-069c9309-2e71-409f-b945-bd30965e6421.png">
+</p>
+<br/> 
+
 plotting the data: <br/>  
 
 `ggplot` <br/> 
