@@ -1,0 +1,48 @@
+---
+title: "Skewness & Kurtosis"
+author: "Said Sharify"
+date: "2022-08-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Skewness
+
+Disparity is when the data in a dataset is unbalanced. Skewness allows us to calculate the symmetry of our dataset. A dataset is symmetric when the data are equally distributed on either side of the mean, the Skewness equal to 0, means the dataset is symmetric.
+
+Mathematically it is given by :
+Pearson’s median skewness = 3 (Mean - Median) / Standard Deviation
+
+If the Skewness is greater than 0, then the dataset is skewed to the right. That is to say that the majority of the data is on the left and the outliers are on the right. Indeed we can see on the graph that the dataset is not symmetric and is skewed on the right and the majority of vehicles have a range between 200 km and 400 km :
+
+```{r Histogram}
+library(moments)
+
+ElectricCar <- read.csv("~/ElectricCar.csv")
+hist(ElectricCar$Range_Km)
+
+```
+
+Right skew: mean > median
+
+```{r Skewness}
+library(moments)
+skewness(ElectricCar$Range_Km)
+```
+
+
+## Kurtosis
+
+The Kurtosis allows us to calculate the flattening of our curve. A dataset is flat when the data is evenly distributed. We have positive Kurtosis and negative Kurtosis. Kurtos is a measure of the peakedness of the distribution or relative to normal. For symmetric distributions negative Kurtosis implies wider peak and thinner talls.
+
+```{r Kurtosis}
+library(moments)
+kurtosis(ElectricCar$Range_Km)
+```
+
+
+
+
