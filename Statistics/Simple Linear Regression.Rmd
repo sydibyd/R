@@ -1,0 +1,156 @@
+---
+title: "Simple Linear Regression"
+author: "Said Sharify"
+date: "2022-08-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+&nbsp;<br>
+
+## Simple Linear Regression
+The first thing we do, is to check if the data is linear or not:
+```{r plot data}
+library("readr")
+WCAT <- read_csv("WCAT.csv")
+plot(WCAT$Waist, WCAT$AT)
+```
+
+We have :
+
+ - The correlation is positive,
+ - The strength of the correlation sounds moderate,
+ - We can also see a linear relationship.
+ 
+
+&nbsp;<br>
+
+#### Checking the strength of the correlation
+```{r Correlation}
+
+cor(WCAT$Waist, WCAT$AT)
+
+```
+For the value $r = 0.8185578$, we can say it is moderate (and not stronge) as it is smaller than $0.85$.
+
+&nbsp;<br>
+
+####  Linear Regression model
+We can use the lm() function to extract X ~ Y values.
+```{r Linear Regression model}
+
+rgistr <- lm(WCAT$Waist ~ WCAT$AT)
+summary(rgistr)
+
+```
+&nbsp;<br>
+
+Knowing :
+$$ Y = β0 + β1 .(Input) $$
+This equation is used to predict the future values.
+In this example we need to predict the AT value. 
+
+So we have :
+
+ - Intercept value = $β0$ = 72.16332
+ - WCAT$AT  value = $β1$ = 0.19372
+
+And the equation is :
+$$ AT = (72.16332 + 0.19372).(WC) $$
+&nbsp;<br>
+
+As the probability associated with a single value is always 0, we need to calculate the range. First, we look at the value of $Pr$. This value will help us to know if the Intercept value and AT value are sufficient to predict the future.  
+
+Here the $Pr$, or probability value is calculated as below:
+$Pr =  <2e-16$
+
+With :
+$Pr < 0.05$
+This two values are statistically significant to be used in our prediction.
+
+
+&nbsp;<br>
+
+We also have to check the $R-squared:   0.67$ value,
+usually it should be greater than 0.8 for a good prediction model. 
+
+&nbsp;<br>
+
+Insted of getting a single value (Y or AT), we can use R to calculate the confidence interval. 
+```{r confidence interval}
+
+confint(rgistr,  level = 0.95)
+
+```
+So we have the interval :
+
+ - AT(lower range) = 69.1212260 + 0.1676639 .(Input)
+ - AT(upper range) = 75.2054046 + 0.2197684 .(Input)
+
+&nbsp;<br>
+
+In order to predict the future with R, we can use the predict function which will predict the values based on the input data :
+
+```{r predict}
+
+predict(rgistr,  interval = "predict")
+
+```
+&nbsp;<br>
+
+###  Transformation
+#### Logarithmic
+In order to increase the accuracy of the model, and apply the logarithmic model on the trend line, we can use this function in R : 
+```{r Logarithmic Transformation}
+
+rgistr_log <- lm(WCAT$AT ~ log(WCAT$Waist))
+summary(rgistr_log)
+confint(rgistr_log, level = 0.95)
+
+```
+We can see the values are changed slightly, as the equation is changed as below :
+
+ - AT = -1328.34 + 317.14 ($log$(Input))
+
+&nbsp;<br>
+
+#### Exponential
+We can also apply the exponential option over the trend line. 
+```{r Exponential Transformation}
+
+rgistr_exp <- lm(log(WCAT$AT) ~ (WCAT$Waist))
+summary(rgistr_exp)
+confint(rgistr_exp, level = 0.95)
+```
+So the equation is changed as below :
+
+ - $log$(AT) = 0.741021 + 0.040252 (Input)
+ - AT = $exp$ (0.741021 + 0.040252 (Input))
+
+
+&nbsp;<br>
+
+#### Polynomial 
+We also have the Polynomial model to apply on the trend line, which transform the response variable into a polynomial series of the specified degree : 
+
+```{r Polynomial Transformation}
+
+rgistr_pol <- lm((WCAT$AT) ~ (WCAT$Waist) + (WCAT$Waist)^2 + (WCAT$Waist)^3)
+summary(rgistr_pol)
+confint(rgistr_pol, level = 0.95)
+```
+
+
+&nbsp;<br>
+
+#### Note
+Calculated values from these transformations, could be used in Tableau to visualize different presentations of data over the trend line.
+
+
+&nbsp;<br>
+
+&nbsp;<br>
+
