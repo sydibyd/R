@@ -11,7 +11,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 &nbsp;<br>
-&nbsp;<br>
 
 ### SRS (Simple Random Sampling)
 With Population Parameters :
@@ -20,8 +19,8 @@ $μ$ for Mean, $σ^2$ for Variance, $σ$ for Standard Deviation, $π$ for Propor
 and with Sample Statistics :
 $x̄$ for Mean, $S^2$ for Variance, $S$ for Standard Deviation, $P$ for Proportion.
 
-&nbsp;<br>
 
+&nbsp;<br>
 
 ### Sample Size (Generic rules)
   - The sample size is large enough.
@@ -31,9 +30,9 @@ $x̄$ for Mean, $S^2$ for Variance, $S$ for Standard Deviation, $P$ for Proporti
   - A sample size of 30 is considered large enough, but that may / may not be adequate.
   - n > 10[k3]^2, where K3 is sample Skewness.
   - n > 10[K2], where K2 is sample Kurtosis.
- 
-&nbsp;<br>
 
+
+&nbsp;<br>
 
 ### Confidence Interval
 Probability associated with any single number is always 0. Hence, we always need a range in order to calculate the probability. We need to associate a confidence with this range or interval, by default is considered 95% in industrial projects. 
@@ -100,7 +99,6 @@ $[1990 - 1.64(211.29), 1990 + 1.64(211.29)]$
 
 
 &nbsp;<br>
-&nbsp;<br>
 
 ### Calculate the $Z$ value using t-distribution :
 Also called as Degrees of freedom.
@@ -113,6 +111,5 @@ Confidence Interval = $x̄ ± t,n-1 * S / √n$
 The 95% interval for balance is :
 $[1516, 2464]$
 
-&nbsp;<br>
 
 &nbsp;<br>
