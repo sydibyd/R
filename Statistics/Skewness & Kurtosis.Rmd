@@ -43,6 +43,24 @@ library(moments)
 kurtosis(ElectricCar$Range_Km)
 ```
 
+### SRS (Simple random sampling)
+
+With Population Parameters :
+μ for Mean, σ^2 for Variance, σ for Standard Deviation, π for Proportion, 
+
+
+and with Sample Statistics :
+x̄ for Mean, S^2 for Variance, S for Standard Deviation, P for Proportion.
+
+
+### Sample Size
+
+#### Generic rules
+  - Each data point in the sample is independent of the other.
+  - The sample size is large enough
+  - The distribution of data could be symmetry with/without outliers
+  - If data is quite symmetric and has few outliers, even small samples are fine. Otherwise, we need larger samples.
+  - A sample size of 30 is considered large enough, but that may / may not be adequate.
 
 
 
