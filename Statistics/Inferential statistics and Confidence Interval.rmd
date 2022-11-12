@@ -1,0 +1,6 @@
+---
+title: "Inferential statistics and Confidence Interval"
+author: "Said Sharify"
+date: "2022-08-08"
+output: html_document
+---
