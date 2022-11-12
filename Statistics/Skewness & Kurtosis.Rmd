@@ -63,4 +63,8 @@ x̄ for Mean, S^2 for Variance, S for Standard Deviation, P for Proportion.
   - A sample size of 30 is considered large enough, but that may / may not be adequate.
 
 
+#### More precise conditions
+ - n > 10[k3]^2, where K3 is sample Skewness,
+ - n > 10[K2], where K2 is sample Kurtosis.
+
 
