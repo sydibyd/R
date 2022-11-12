@@ -4,3 +4,115 @@ author: "Said Sharify"
 date: "2022-08-08"
 output: html_document
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+&nbsp;<br>
+&nbsp;<br>
+
+### SRS (Simple Random Sampling)
+With Population Parameters :
+$μ$ for Mean, $σ^2$ for Variance, $σ$ for Standard Deviation, $π$ for Proportion, 
+
+and with Sample Statistics :
+$x̄$ for Mean, $S^2$ for Variance, $S$ for Standard Deviation, $P$ for Proportion.
+
+&nbsp;<br>
+
+
+### Sample Size (Generic rules)
+  - The sample size is large enough.
+  - Each data point in the sample is independent of the other.
+  - The distribution of data could be symmetry with/without outliers.
+  - If data is quite symmetric and has few outliers, even small samples are fine. Otherwise, we need larger samples.
+  - A sample size of 30 is considered large enough, but that may / may not be adequate.
+  - n > 10[k3]^2, where K3 is sample Skewness.
+  - n > 10[K2], where K2 is sample Kurtosis.
+ 
+&nbsp;<br>
+
+
+### Confidence Interval
+Probability associated with any single number is always 0. Hence, we always need a range in order to calculate the probability. We need to associate a confidence with this range or interval, by default is considered 95% in industrial projects. 
+
+&nbsp;<br>
+
+#### Case Study
+There is a Fin tech start up with a 100.000 target market, and they are planning to offer a affinity credit card to some users. By the way, we know the existence of any bank or financial institute is defined with the average card holders having their accounts. There has to be a minimum value of balance periodically on each bank account. This could determine how profitable the bank is.
+
+We first do a pilot of 140 people, and then check if it would be profitable or not; if it had been profitable, then we will launch it for 100.000 people.
+
+ - Sample = 140
+ - $x̄$ (Average balance) =  1990$
+ - $S$ (Standard Deviation) = 2833$
+ - $σ$ (Population Standard Deviation) = 2500$ (Assume)
+
+
+&nbsp;<br>
+
+##### What can we say about the average balance that will be held after a full-fledged market launch?
+We need to calculate Interval Estimate with an associated level of confidence :
+$Point Estimate ± Margin of Error$
+
+&nbsp;<br>
+
+#### Confidence Interval for the Population Mean
+First we need to choose a confidence level : $(1-α)%(95% / 99% / 90%, etc.)$
+
+Then find out the population mean:
+Confidence Interval $= x̄ ± z * ơ / √n$
+
+Where,
+
+ - $x̄$: Sample Mean
+ - $z$: Confidence Coefficient
+ - $ơ$: Population Standard Deviation
+ - $n$: Sample Size
+
+
+&nbsp;<br>
+
+##### Calculate the $Z$ value using $ơ$ :
+ - $n$ = 140; $ơ = 2500; x̄ = 1990$
+ - $ơx̄ = ơ / √n = 2500 / √(140) = 211.29$
+
+
+First, With $1-α = 0.95$ :
+```{r 95% interval}
+# calculate the quantile
+qnorm(0.975)
+qnorm(0.025)
+```
+With this two values we can calculate the confidence interval :
+$[1990 - 1.96(211.29), 1990 + 1.96(211.29)]$
+
+
+Now with $1-α = 0.90$ :
+```{r 90% interval}
+# calculate the quantile
+qnorm(0.95)
+qnorm(0.05)
+```
+$[1990 - 1.64(211.29), 1990 + 1.64(211.29)]$
+
+
+&nbsp;<br>
+&nbsp;<br>
+
+### Calculate the $Z$ value using t-distribution :
+Also called as Degrees of freedom.
+
+Confidence Interval = $x̄ ± t,n-1 * S / √n$
+
+ - $1-α = 0.95$; $n = 140$;
+ - Calculate $t0.95,139 = 1.98$ (Google : T-Table)
+ 
+The 95% interval for balance is :
+$[1516, 2464]$
+
+&nbsp;<br>
+
+&nbsp;<br>
