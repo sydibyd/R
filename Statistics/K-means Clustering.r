@@ -36,7 +36,7 @@ kclustr$cluster
 # Check the centers
 kclustr$centers
 
-# Lower the value if tot.withinss, the better it is. 
+# Lower the value of tot.withinss, the better it is. 
 # This means more similarity and closeness.
 
 
