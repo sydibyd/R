@@ -32,6 +32,11 @@ plot(XandY)
 kclustr <- kmeans(XandY, 4)
 str(kclustr)
 
+# In order to understand the structure of kmeans cluster,
+# we will use the animation package here.
+install.packages("animation")
+library(animation)
+kAnimat <- kmeans.ani(XandY, 4)
 
 
 
