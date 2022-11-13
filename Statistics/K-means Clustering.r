@@ -36,8 +36,10 @@ kclustr$cluster
 # Check the centers
 kclustr$centers
 
-# Lower the value of tot.withinss, the better it is. 
-# This means more similarity and closeness.
+# Lower the value of tot.withinss, the better it is, 
+# this means more similarity and closeness.
+# More the value of betweenss, the better it is, 
+# this will let us easily differentiate between clusters.
 
 
 
