@@ -27,3 +27,17 @@ str(kclustr)
 install.packages("animation")
 library(animation)
 kAnimat <- kmeans.ani(XandY, 4)
+
+
+# Look into the data
+# Check the cluster number
+kclustr$cluster
+
+# Check the centers
+kclustr$centers
+
+# Lower the value if tot.withinss, the better it is. 
+# This means more similarity and closeness.
+
+
+
