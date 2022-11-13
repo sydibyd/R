@@ -7,7 +7,7 @@
 X <- runif(44)
 X
 
-# Generate anothr 44 random numbers
+# Generate another 44 random numbers
 Y <- runif(44)
 Y
 
@@ -27,8 +27,3 @@ str(kclustr)
 install.packages("animation")
 library(animation)
 kAnimat <- kmeans.ani(XandY, 4)
-
-
-
-
-
