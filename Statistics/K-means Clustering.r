@@ -2,16 +2,6 @@
 # author: "Said Sharify"
 # date: "2022-08-08"
 # output: html_document
----
-
-install.packages("Rserve")
-library(Rserve)
-
-# for Tableau example
-install.packages("mvoutlier")
-install.packages("plyr")
-
-Rserve()
 
 # Generate 44 random numbers
 X <- runif(44)
